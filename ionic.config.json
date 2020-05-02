@@ -1,0 +1,7 @@
+{
+  "name": "rojnu-devu",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
