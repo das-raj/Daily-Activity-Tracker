@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+// returns keys of report dictionary
 @Pipe({
   name: 'keys'
 })

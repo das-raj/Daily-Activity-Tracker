@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DevuDataService } from '../service/devu-data.service';
+import { PopoverController } from '@ionic/angular';
 
 @Component({
   selector: 'app-devu-form',
@@ -10,6 +11,7 @@ export class DevuFormComponent implements OnInit {
 
   public category: string;
   public description: string;
+  @Input() popover: PopoverController;
 
   constructor(public devuDataService:DevuDataService) { }
 
@@ -18,5 +20,6 @@ export class DevuFormComponent implements OnInit {
   submit(){
     if(this.category!=null && this.description!=null)
     this.devuDataService.addDevu(this.category, this.description);
+    this.popover.dismiss();
   }
 }

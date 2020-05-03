@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+// returns today's events from the array of all events
 @Pipe({
   name: 'todayEvents',
   pure: false

@@ -10,11 +10,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { DevuFormComponent } from './devu-form/devu-form.component';
+import { EventDescriptionComponent } from './event-description/event-description.component';
 import { FormsModule } from  '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, DevuFormComponent],
-  entryComponents: [DevuFormComponent],
+  declarations: [AppComponent, DevuFormComponent, EventDescriptionComponent],
+  entryComponents: [DevuFormComponent, EventDescriptionComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule],
   providers: [
     StatusBar,

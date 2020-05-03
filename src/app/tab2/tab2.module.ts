@@ -9,6 +9,8 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 import { Tab2PageRoutingModule } from './tab2-routing.module';
 import { CountMinutePipe } from '../pipes/count-minute.pipe';
 import { TodayEventsPipe } from '../pipes/today-events.pipe';
+import { IsTodayEventPipe } from '../pipes/is-today-event.pipe';
+
 
 @NgModule({
   imports: [
@@ -18,6 +20,6 @@ import { TodayEventsPipe } from '../pipes/today-events.pipe';
     ExploreContainerComponentModule,
     Tab2PageRoutingModule
   ],
-  declarations: [Tab2Page, CountMinutePipe, TodayEventsPipe]//, DevuFormComponent]
+  declarations: [Tab2Page, CountMinutePipe, TodayEventsPipe, IsTodayEventPipe]//, DevuFormComponent]
 })
 export class Tab2PageModule {}
