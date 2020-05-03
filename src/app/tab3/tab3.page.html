@@ -1,17 +1,54 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      History
     </ion-title>
+    
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title size="large">History</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="this.devuDataService.generateReport2()">
+      <ion-icon name="refresh-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <div *ngIf="dataLoaded()">
+    <ion-card *ngFor="let key of this.devuDataService.reports | keys">
+      <ion-item><ion-icon name="calendar-outline" slot="start" color="primary"></ion-icon>{{ getDate(key) | date: 'mediumDate'}}</ion-item>
+      <ion-list>
+          <ion-item>            
+            <ion-label>Hath</ion-label>
+            <ion-badge color="warning" slot="end">{{this.devuDataService.reports[key].Hath}}</ion-badge>
+          </ion-item>
+          <ion-item>
+            <ion-label>Maan</ion-label>
+            <ion-badge color="warning" slot="end">{{this.devuDataService.reports[key].Maan}}</ion-badge>
+          </ion-item>
+          <ion-item>
+            <ion-label>Irsha</ion-label>
+            <ion-badge color="warning" slot="end">{{this.devuDataService.reports[key].Irsha}}</ion-badge>
+          </ion-item>
+          <ion-item>
+            <ion-label>Kaam</ion-label>
+            <ion-badge color="warning" slot="end">{{this.devuDataService.reports[key].Kaam}}</ion-badge>
+          </ion-item>
+          <ion-item>
+            <ion-label>Krodh</ion-label>
+            <ion-badge color="warning" slot="end">{{this.devuDataService.reports[key].Krodh}}</ion-badge>
+          </ion-item>
+          <ion-item>
+            <ion-label>Lobh</ion-label>
+            <ion-badge color="warning" slot="end">{{this.devuDataService.reports[key].Lobh}}</ion-badge>
+          </ion-item>
+        </ion-list>
+    </ion-card>
+  </div>
 </ion-content>

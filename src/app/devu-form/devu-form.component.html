@@ -1,0 +1,35 @@
+<ion-content>
+    <form #employeeForm="ngForm">  
+      <ion-item>
+        <ion-label>Category</ion-label>
+        <ion-select placeholder="Select One" [(ngModel)]="category" name="category" required="true"> 
+          <ion-select-option value="Hath">Hath</ion-select-option>
+          <ion-select-option value="Maan">Maan</ion-select-option>
+          <ion-select-option value="Irsha">Irsha</ion-select-option>
+          <ion-select-option value="Kaam">Kaam</ion-select-option>
+          <ion-select-option value="Krodh">Krodh</ion-select-option>
+          <ion-select-option value="Lobh">Lobh</ion-select-option>
+        </ion-select>
+      </ion-item>  
+        
+      <ion-item>
+        <ion-label>Description</ion-label>
+        <ion-textarea placeholder="Enter more information here..." [(ngModel)]="description" name="description" required="true"></ion-textarea>
+      </ion-item>
+      
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <div class="ion-text-center">
+                <ion-text color="secondary">
+                  <ion-button type="submit" (click)="submit()">Submit</ion-button>
+                </ion-text>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      
+    </form>
+</ion-content>
